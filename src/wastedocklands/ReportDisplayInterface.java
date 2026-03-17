@@ -10,4 +10,5 @@ package wastedocklands;
  */
 public interface ReportDisplayInterface {
     
+    
 }

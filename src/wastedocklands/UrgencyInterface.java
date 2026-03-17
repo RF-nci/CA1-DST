@@ -9,5 +9,6 @@ package wastedocklands;
  * @author xrlei
  */
 public interface UrgencyInterface {
-    
+    int getPrority();
+    void setPriority();
 }
