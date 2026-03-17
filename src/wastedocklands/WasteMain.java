@@ -61,7 +61,7 @@ public class WasteMain implements UrgencyInterface , ReportDisplayInterface{
     }
     @Override
     public String getReport(){
-       System.out.println("Report "+reportID);
+       return ("Report "+reportID);
     }
     
     //toString for output syntax of Reports
