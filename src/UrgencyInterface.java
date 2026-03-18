@@ -8,7 +8,7 @@ package wastedocklands;
  *
  * @author xrlei
  */
-public interface ReportDisplayInterface {
-    
-    
+public interface UrgencyInterface {
+   public int getUrgency();
+   public void setPriority(int priority);
 }

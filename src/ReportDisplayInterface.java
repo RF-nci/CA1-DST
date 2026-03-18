@@ -8,7 +8,8 @@ package wastedocklands;
  *
  * @author xrlei
  */
-public interface UrgencyInterface {
-    int getPrority();
-    void setPriority();
+//Calls out toString from WasteMain for display
+public interface ReportDisplayInterface {
+    public String getReports();
+    
 }

@@ -9,7 +9,7 @@ package wastedocklands;
  * @author xrlei
  */
 // declare my attributes and link interfaces to main class
-public class WasteMain implements UrgencyInterface , ReportDisplayInterface{
+public class WasteMain implements UrgencyInterface , ReportDisplayInterface, Comparable<WasteMain>{
     public String reportID;
     public String location;
     public int priority;
@@ -27,39 +27,40 @@ public class WasteMain implements UrgencyInterface , ReportDisplayInterface{
      
     //Declare getters and setters for indexing
    // Getter and setter for urgency int value for priority queue
-     @Override
     public String getReportID() {
         return reportID;
     }
-    @Override
     public void setReportID(String reportID) {
         this.reportID = reportID;
     }
-    @Override
     public String getLocation() {
         return location;
     }
-    @Override
     public void setLocation(String location) {
         this.location = location;
     }
+    
     @Override
+    public int getUrgency(){
+        return this.priority;
+    }
+    
     public int getPriority() {
-        return priority;
+        return this.priority;
     }
     @Override
     public void setPriority(int priority) {
         this.priority = priority;
     }
-    @Override
+    
     public String getType() {
         return type;
     }
-    @Override
+    
     public void setType(String type) {
         this.type = type;
     }
-    @Override
+    
     public String getReport(){
        return ("Report "+reportID);
     }
@@ -69,11 +70,27 @@ public class WasteMain implements UrgencyInterface , ReportDisplayInterface{
     public String getReports(){
         return toString();
     }
+    
 
     @Override
     public String toString() {
         return "WasteMain{" + "Report ID = " + reportID + ", Location = " + location + ", Priority = " + priority + ", Waste =" + type + '}';
     }
-
+    //To compare priority over two reports
+    //If other report is larger we move it up
+    //Else if current report is larger we move that up
+    //If equal we add to stack
+    //
+    @Override
+    public int compareTo(WasteMain other) {
+        if (this.priority < other.priority) {
+            return 1;  
+                }else
+                    if (this.priority > other.priority) {
+                    return -1; 
+                     }else{
+                        return 0;
+    }
+}
     
 }
